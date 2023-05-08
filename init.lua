@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "rose-pine",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -34,6 +34,7 @@ return {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
+          "php",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -69,6 +70,26 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    if vim.g.neovide then
+        -- Enable copy and paste
+        vim.g.neovide_input_use_logo = 1
+        vim.keymap.set('n', '<D-s>', ':w<CR>'); -- Save
+        vim.keymap.set('v', '<D-c>', '"+y'); -- Copy
+        vim.keymap.set('n', '<D-v>', '"+P'); -- Paste normal mode
+        vim.keymap.set('v', '<D-v>', '"+P'); -- Paste visual mode
+        vim.keymap.set('c', '<D-v>', '<C-R>+'); -- Paste command mode
+        vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli'); -- Paste command mode
+
+        -- UI & Fonts
+        vim.opt.linespace = 2;
+        vim.o.guifont = "FiraCode Nerd Font Mono:h14"
+
+        -- Less distractions while typing
+        vim.g.neovide_hide_mouse_when_typing = true
+        vim.g.neovide_cursor_animate_in_insert_mode = false
+    end
+    vim.g.phpactorPhpBin = '/usr/local/Cellar/php/8.2.5/bin/php'
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {

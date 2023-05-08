@@ -20,6 +20,24 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<D-p>"] = {":Telescope find_files <cr>"},
+    ["<D-S-p>"] = {":Telescope commands <cr>"},
+    ["<D-S-f>"] = {":Telescope live_grep <cr>"},
+  },
+  i = {
+    ["<D-p>"] = {":Telescope find_files <cr>"},
+    ["<D-S-p>"] = {":Telescope commands <cr>"},
+    ["<D-S-f>"] = {":Telescope live_grep <cr>"},
+  },
+  c = {
+    ["<D-p>"] = {":Telescope find_files <cr>"},
+    ["<D-S-p>"] = {":Telescope commands <cr>"},
+    ["<D-S-f>"] = {":Telescope live_grep <cr>"},
+  },
+  v = {
+    ["<D-p>"] = {":Telescope find_files <cr>"},
+    ["<D-S-p>"] = {":Telescope commands <cr>"},
+    ["<D-S-f>"] = {":Telescope live_grep <cr>"},
   },
   t = {
     -- setting a mapping to false will disable it

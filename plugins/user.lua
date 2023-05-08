@@ -9,4 +9,7 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "lewis6991/gitsigns.nvim"
+  }
 }
